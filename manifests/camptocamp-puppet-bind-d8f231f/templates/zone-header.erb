@@ -1,0 +1,13 @@
+; File managed by puppet
+$TTL <%=zone_ttl%>
+<% if zone_origin -%>
+$ORIGIN <%=zone_origin%>
+<% end -%>
+@ IN SOA <%=name%>. <%=zone_contact%>. (
+      <%=zone_serial%>  ; serial
+      <%=zone_refresh%> ; refresh
+      <%=zone_retry%>   ; retry
+      <%=zone_expiracy%>; expiracy
+      <%=zone_ttl%> )   ; TTL
+      IN NS <%=zone_ns%>.
+
