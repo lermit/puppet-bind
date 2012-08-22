@@ -71,13 +71,13 @@ For detailed info about the logic and usage patterns of Example42 modules check 
         zone_ttl => '3600000',
         ...
 
-* Set contact email address for zone. Default is root.${zone_name}. Don't forget final point. 
+* Set contact email address for zone. Default is root.${zone_name}. Don't forget final point.
 
         ...
         zone_contact => 'root.localhost.',
         ...
 
-* Set time period for zone. Default : 
+* Set time period for zone. Default :
     - refresh : 604800
     - retry : 86400
     - expire : 2419200
@@ -96,6 +96,23 @@ For detailed info about the logic and usage patterns of Example42 modules check 
         ...
 
 == USAGE - Record
+
+* Add an A record into zone (example.com). www.example.com -> 192.168.0.10. This will add entry like "www IN A 192.168.0.10".
+
+        bind::record { 'www':
+           zone   => 'example.com.',
+           target => '192.168.0.10',
+        }
+
+* There is some wrapper for A, AAAA, MX, TXT, SRV, CNAME and PTR entry. See source for more informations.
+
+        bind::a
+        bind::aaaa
+        bind::mx
+        bind::txt
+        bind::srv
+        bind::cname
+        bind::ptr
 
 == USAGE - Overrides and Customizations
 * Use custom sources for main config file
