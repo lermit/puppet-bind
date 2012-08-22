@@ -22,6 +22,9 @@
 #   Record class
 #   (Default: 'IN')
 #
+# [*record_priority*]
+#   The record priority for MX or SRV entry.
+#
 # [*export_tag*]
 #   Used tag for exported ressource
 #   (Default: $zone_name)
@@ -46,13 +49,14 @@
 define bind::record (
   $zone,
   $target,
-  $host         = $name,
-  $record_type  = 'A',
-  $record_class = 'IN',
-  $export_tag   = $zone,
-  $absent       = false,
-  $template     = 'bind/record.erb',
-  $ttl          = ''
+  $host            = $name,
+  $record_type     = 'A',
+  $record_class    = 'IN',
+  $record_priority = '',
+  $export_tag      = $zone,
+  $absent          = false,
+  $template        = 'bind/record.erb',
+  $ttl             = ''
   ) {
 
   if $absent == false {
