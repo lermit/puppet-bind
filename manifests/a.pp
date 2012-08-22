@@ -14,7 +14,7 @@ define bind::a (
   $ttl          = ''
   ) {
 
-  bind::record { $name:
+  bind::record { "A-$name":
     zone         => $zone,
     target       => $target,
     host         => $host,

@@ -14,7 +14,7 @@ define bind::ptr (
   $ttl          = ''
   ) {
 
-  bind::record { $name:
+  bind::record { "PTR-$name":
     zone         => $zone,
     target       => $target,
     host         => $host,

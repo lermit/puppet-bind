@@ -15,7 +15,7 @@ define bind::mx (
   $ttl             = ''
   ) {
 
-  bind::record { $name:
+  bind::record { "MX-$name":
     zone            => $zone,
     target          => $target,
     host            => $host,

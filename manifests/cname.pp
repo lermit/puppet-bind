@@ -14,7 +14,7 @@ define bind::cname (
   $ttl          = ''
   ) {
 
-  bind::record { $name:
+  bind::record { "CNAME-$name":
     zone         => $zone,
     target       => $target,
     host         => $host,
