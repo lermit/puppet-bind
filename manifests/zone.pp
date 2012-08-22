@@ -51,8 +51,7 @@
 #   (Default: '')
 #
 # [*zone_ns*]
-#   Nameserver for this zone. Can be a array of value like
-#   ['ns1.example.org', 'ns2.example.org']
+#   Main nameserver for this zone. You have to add this one as A record.
 #   (Default: 'ns.$zone_name')
 #
 # [*zone_master*]
