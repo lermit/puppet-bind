@@ -48,7 +48,7 @@
 #
 # [*zone_neg_cache*]
 #   Zone negative cache TTL.
-#   (Default: '')
+#   (Default: '604800')
 #
 # [*zone_ns*]
 #   Main nameserver for this zone. You have to add this one as A record.
@@ -101,7 +101,7 @@ define bind::zone(
   $zone_refresh   = '604800',
   $zone_retry     = '86400',
   $zone_expire    = '2419200',
-  $zone_neg_cache = '',
+  $zone_neg_cache = '604800',
   $zone_ns        = '',
   $zone_master    = '',
   $zone_forward   = '',

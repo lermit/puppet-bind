@@ -77,10 +77,7 @@ For detailed info about the logic and usage patterns of Example42 modules check 
         zone_contact => 'root.localhost.',
         ...
 
-* Set time period for zone. Default :
-    - refresh : 604800
-    - retry : 86400
-    - expire : 2419200
+* Set time period for zone.
 
         ...
         zone_refresh   => '604800',
