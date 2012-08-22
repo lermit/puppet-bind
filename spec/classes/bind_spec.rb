@@ -129,7 +129,7 @@ describe 'bind' do
 
   describe 'Test service autorestart', :broken => true do
     it 'should automatically restart the service, by default' do
-      content = catalogue.resource('Concat::Fragment', 'bind.conf-header').send(:parameters)[:notify]
+      content = catalogue.resource('Concat', '/etc/bind/named.conf').send(:parameters)[:notify]
       content.should == 'Service[bind]{:name=>"bind"}'
     end
   end
@@ -138,7 +138,7 @@ describe 'bind' do
     let(:params) { {:service_autorestart => "no" } }
 
     it 'should not automatically restart the service, when service_autorestart => false' do
-      content = catalogue.resource('Concat::Fragment', 'bind.conf-header').send(:parameters)[:notify]
+      content = catalogue.resource('Concat', '/etc/bind/named.conf').send(:parameters)[:notify]
       content.should be_nil
     end
   end

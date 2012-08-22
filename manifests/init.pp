@@ -350,12 +350,12 @@ class bind (
       owner   => $bind::config_file_owner,
       group   => $bind::config_file_group,
       require => Package['bind'],
+      notify  => $bind::manage_service_autorestart,
     }
     concat::fragment { 'bind.conf-header':
       target  => $bind::config_file,
       source  => $bind::manage_file_source,
       content => $bind::manage_file_content,
-      notify  => $bind::manage_service_autorestart,
     }
   }
 
