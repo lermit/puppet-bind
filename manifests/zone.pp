@@ -143,13 +143,13 @@ define bind::zone(
     if $zone_type == 'master'
     or $zone_type == 'hint' {
       concat { "$bind::config_dir/$zone_config_file":
-        mode  => $bind::config_file_mode,
-        owner => $bind::config_file_owner,
-        group => $bind::config_file_group,
+        mode   => $bind::config_file_mode,
+        owner  => $bind::config_file_owner,
+        group  => $bind::config_file_group,
+        notify => $bind::manage_service_autorestart,
       }
       Concat::Fragment <| tag == "bind-zone-$real_export_tag" |> {
         target => "$bind::config_dir/$zone_config_file",
-        notify => $bind::manage_service_autorestart,
         order  => 50,
       }
     }
