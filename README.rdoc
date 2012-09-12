@@ -2,11 +2,13 @@
 
 This is a Puppet module for bind based on the second generation layout ("NextGen") of Example42 Puppet Modules.
 
+Made by Romain THERRAT / Carpe-Hora
+Based on Example42 rules
 Made by Alessandro Franceschi / Lab42
 
 Official site: http://www.example42.com
 
-Official git repository: http://github.com/example42/puppet-bind
+Official git repository: http://github.com/lermit/puppet-bind
 
 Released under the terms of Apache 2 License.
 

@@ -202,6 +202,8 @@
 #
 #
 # == Author
+#   Romain THERRAT <romain42@gmail.com/>
+#   Based on Example42 rules
 #   Alessandro Franceschi <al@lab42.it/>
 #
 class bind (

@@ -147,7 +147,7 @@ define bind::zone(
         owner => $bind::config_file_owner,
         group => $bind::config_file_group,
       }
-      Concat::Fragment <<| tag == "bind-zone-$real_export_tag" |>> {
+      Concat::Fragment <| tag == "bind-zone-$real_export_tag" |> {
         target => "$bind::config_dir/$zone_config_file",
         notify => $bind::manage_service_autorestart,
         order  => 50,
