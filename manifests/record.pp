@@ -37,6 +37,12 @@
 #   Used template file.
 #   (Default: 'bind/record.erb')
 #
+# [*order*]
+#   Allow an order to be set so that wildcard entries can be set at the end
+#   of the zone file. The default value is taken from the upstream
+#   @concat::fragment definition.
+#   (Default: '10')
+#
 # == Example:
 #
 # * Create A record. www -> 192.168.0.10
@@ -56,13 +62,15 @@ define bind::record (
   $export_tag      = $zone,
   $absent          = false,
   $template        = 'bind/record.erb',
-  $ttl             = ''
+  $ttl             = '',
+  $order           = '10'
   ) {
 
   if $absent == false {
-    @concat::fragment { "bind-zone-${zone}-${host}-${target}":
+    @concat::fragment { "bind-zone-${zone}-${order}-${host}-${target}":
       tag     => "bind-zone-$export_tag",
       content => template($template),
+      order   => $order
     }
   }
 
