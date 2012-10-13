@@ -103,9 +103,10 @@ For detailed info about the logic and usage patterns of Example42 modules check 
            target => '192.168.0.10',
         }
 
-* There is some wrapper for A, AAAA, MX, TXT, SRV, CNAME and PTR entry. See source for more informations.
+* There is some wrapper for A, wildcard(*), AAAA, MX, TXT, SRV, CNAME and PTR entry. See source for more informations.
 
         bind::a
+        bind::wildcard
         bind::aaaa
         bind::mx
         bind::txt
