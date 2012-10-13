@@ -3,15 +3,26 @@
 # Create a A DNS record with a preset weight for a wildcard record.
 # See bind::record for more informations
 #
+# == Parameters
+#
 # [*order*]
 #   Override's the default order from bind::record to be a high value. If you
 #   for some reason have more than 999999 records you will need to increase
 #   the order value.
 #   (Default: '999999')
 #
+# == Examples
+#
+# * Create a wildcard record for example42.com zone
+#
+# bind::wildcard{ 'example42.com':
+#   target => '42.42.42.42',
+#   zone   => 'example42.com',
+# }
+#
 define bind::wildcard (
-  $zone,
   $target,
+  $zone         = $name,
   $host         = '*',
   $record_class = 'IN',
   $export_tag   = $zone,
@@ -21,7 +32,7 @@ define bind::wildcard (
   $order        = '999999'
   ) {
 
-  bind::record { "A-$name":
+  bind::record { "wildcard-$name":
     zone         => $zone,
     target       => $target,
     host         => $host,
