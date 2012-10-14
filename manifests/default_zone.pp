@@ -1,3 +1,19 @@
+# = Class: bind::default_zone
+#
+# This class provide some pre-configured default zone.
+# For the instance this class add the '.' zone with some record.
+#
+# == Authors
+#
+# Romain THERRAT <romain42@gmail.com>
+#
+# Based on Example42 rules
+# Alessandro Franceschi <al@lab42.it/>
+#
+# == Copyright
+#
+# Released under the terms of Apache2 licence.
+#
 class bind::default_zone{
 
   # Root zone

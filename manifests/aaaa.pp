@@ -1,7 +1,18 @@
 # = Define: bind::aaaa
 #
 # Create a AAAA DNS record.
-# See bind::record for more informations
+# See record or a defined ressource for more informations
+#
+# == Authors
+#
+# Romain THERRAT <romain42@gmail.com>
+#
+# Based on Example42 rules
+# Alessandro Franceschi <al@lab42.it/>
+#
+# == Copyright
+#
+# Released under the terms of Apache2 licence.
 #
 define bind::aaaa (
   $zone,

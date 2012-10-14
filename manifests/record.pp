@@ -52,6 +52,17 @@
 #     target => '192.168.0.10',
 #   }
 #
+# == Authors
+#
+# Romain THERRAT <romain42@gmail.com>
+#
+# Based on Example42 rules
+# Alessandro Franceschi <al@lab42.it/>
+#
+# == Copyright
+#
+# Released under the terms of Apache2 licence.
+#
 define bind::record (
   $zone,
   $target,
