@@ -13,7 +13,8 @@ define bind::ns (
   $export_tag   = $zone,
   $absent       = false,
   $template     = 'bind/record.erb',
-  $ttl          = ''
+  $ttl          = '',
+  $order        = '0'
   ) {
 
   bind::record { "NS-$name":
@@ -26,5 +27,6 @@ define bind::ns (
     absent       => $absent,
     template     => $template,
     ttl          => $ttl,
+    order        => $order
   }
 }
