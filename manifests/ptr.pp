@@ -37,7 +37,8 @@ define bind::ptr (
   $export_tag   = $zone,
   $absent       = false,
   $template     = 'bind/record.erb',
-  $ttl          = ''
+  $ttl          = '',
+  $order        = '70'
   ) {
 
   bind::record { "PTR-$name":
@@ -50,5 +51,6 @@ define bind::ptr (
     absent       => $absent,
     template     => $template,
     ttl          => $ttl,
+    order        => $order,
   }
 }

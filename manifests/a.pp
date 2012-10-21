@@ -42,7 +42,8 @@ define bind::a (
   $export_tag   = $zone,
   $absent       = false,
   $template     = 'bind/record.erb',
-  $ttl          = ''
+  $ttl          = '',
+  $order        = '40',
   ) {
 
   bind::record { "A-$name":
@@ -55,5 +56,6 @@ define bind::a (
     absent       => $absent,
     template     => $template,
     ttl          => $ttl,
+    order        => $order,
   }
 }

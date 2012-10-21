@@ -22,10 +22,11 @@ define bind::txt (
   $export_tag   = $zone,
   $absent       = false,
   $template     = 'bind/record.erb',
-  $ttl          = ''
+  $ttl          = '',
+  $order        = '30'
   ) {
 
-  bind::record { $name:
+  bind::record { "TXT-$name":
     zone         => $zone,
     target       => $target,
     host         => $host,
@@ -35,5 +36,6 @@ define bind::txt (
     absent       => $absent,
     template     => $template,
     ttl          => $ttl,
+    order        => $order,
   }
 }

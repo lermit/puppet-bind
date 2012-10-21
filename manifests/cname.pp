@@ -35,7 +35,8 @@ define bind::cname (
   $export_tag   = $zone,
   $absent       = false,
   $template     = 'bind/record.erb',
-  $ttl          = ''
+  $ttl          = '',
+  $order        = '60'
   ) {
 
   bind::record { "CNAME-$name":
@@ -48,5 +49,6 @@ define bind::cname (
     absent       => $absent,
     template     => $template,
     ttl          => $ttl,
+    order        => $order,
   }
 }

@@ -75,12 +75,13 @@ define bind::srv (
   $export_tag      = $zone,
   $absent          = false,
   $template        = 'bind/record.erb',
-  $ttl             = ''
+  $ttl             = '',
+  $order           = '20'
   ) {
 
   $real_priority = "$record_priority $record_weight $record_port"
 
-  bind::record { $name:
+  bind::record { "SRV-$name":
     zone            => $zone,
     target          => $target,
     host            => $host,
@@ -91,5 +92,6 @@ define bind::srv (
     absent          => $absent,
     template        => $template,
     ttl             => $ttl,
+    order           => $order,
   }
 }

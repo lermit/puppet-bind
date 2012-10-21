@@ -51,7 +51,8 @@ define bind::mx (
   $export_tag      = $zone,
   $absent          = false,
   $template        = 'bind/record.erb',
-  $ttl             = ''
+  $ttl             = '',
+  $order           = '10'
   ) {
 
   bind::record { "MX-$name":
@@ -65,5 +66,6 @@ define bind::mx (
     absent          => $absent,
     template        => $template,
     ttl             => $ttl,
+    order           => $order,
   }
 }
