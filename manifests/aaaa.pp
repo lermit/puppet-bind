@@ -26,7 +26,7 @@ define bind::aaaa (
   $order        = '50'
   ) {
 
-  bind::record { "AAAA-$name":
+  bind::record { "AAAA-$name.$zone":
     zone         => $zone,
     target       => $target,
     host         => $host,

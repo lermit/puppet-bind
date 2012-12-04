@@ -46,7 +46,7 @@ define bind::a (
   $order        = '40',
   ) {
 
-  bind::record { "A-$name":
+  bind::record { "A-$name.$zone":
     zone         => $zone,
     target       => $target,
     host         => $host,

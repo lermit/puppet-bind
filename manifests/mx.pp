@@ -55,7 +55,7 @@ define bind::mx (
   $order           = '10'
   ) {
 
-  bind::record { "MX-$name":
+  bind::record { "MX-$name.$zone":
     zone            => $zone,
     target          => $target,
     host            => '',

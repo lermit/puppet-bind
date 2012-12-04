@@ -39,7 +39,7 @@ define bind::ns (
   $order        = '0'
   ) {
 
-  bind::record { "NS-$name":
+  bind::record { "NS-$name.$zone":
     zone         => $zone,
     target       => $target,
     host         => '',

@@ -41,7 +41,7 @@ define bind::ptr (
   $order        = '70'
   ) {
 
-  bind::record { "PTR-$name":
+  bind::record { "PTR-$name.$zone":
     zone         => $zone,
     target       => $target,
     host         => $host,
