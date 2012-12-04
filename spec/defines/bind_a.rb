@@ -10,10 +10,10 @@ describe 'bind::a', :type => :define do
         :zone   => 'example42.com',
         :target => '42.42.42.42',
     } }
-    it { should contain_bind__record('A-server').with_zone('example42.com') }
-    it { should contain_bind__record('A-server').with_target('42.42.42.42') }
-    it { should contain_bind__record('A-server').with_record_type('A') }
-    it { should contain_bind__record('A-server').with_order('40') }
+    it { should contain_bind__record('A-server.example42.com').with_zone('example42.com') }
+    it { should contain_bind__record('A-server.example42.com').with_target('42.42.42.42') }
+    it { should contain_bind__record('A-server.example42.com').with_record_type('A') }
+    it { should contain_bind__record('A-server.example42.com').with_order('40') }
   end
 
   describe 'Test bind::a with different order' do
@@ -22,7 +22,7 @@ describe 'bind::a', :type => :define do
         :target => '42.42.42.42',
         :order => '42',
     } }
-    it { should contain_bind__record('A-server').with_order('42') }
+    it { should contain_bind__record('A-server.example42.com').with_order('42') }
   end
 end
 

@@ -10,10 +10,10 @@ describe 'bind::ptr', :type => :define do
         :zone   => '42.42.in-addr.arpa',
         :target => 'server.example42.com.',
     } }
-    it { should contain_bind__record('PTR-42.42').with_zone('42.42.in-addr.arpa') }
-    it { should contain_bind__record('PTR-42.42').with_target('server.example42.com.') }
-    it { should contain_bind__record('PTR-42.42').with_record_type('PTR') }
-    it { should contain_bind__record('PTR-42.42').with_order('70') }
+    it { should contain_bind__record('PTR-42.42.42.42.in-addr.arpa').with_zone('42.42.in-addr.arpa') }
+    it { should contain_bind__record('PTR-42.42.42.42.in-addr.arpa').with_target('server.example42.com.') }
+    it { should contain_bind__record('PTR-42.42.42.42.in-addr.arpa').with_record_type('PTR') }
+    it { should contain_bind__record('PTR-42.42.42.42.in-addr.arpa').with_order('70') }
   end
 
   describe 'Test bind::ptr with different order' do
@@ -22,7 +22,7 @@ describe 'bind::ptr', :type => :define do
         :target => 'server.example42.com.',
         :order => '42',
     } }
-    it { should contain_bind__record('PTR-42.42').with_order('42') }
+    it { should contain_bind__record('PTR-42.42.42.42.in-addr.arpa').with_order('42') }
   end
 end
 

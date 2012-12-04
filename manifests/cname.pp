@@ -39,7 +39,7 @@ define bind::cname (
   $order        = '60'
   ) {
 
-  bind::record { "CNAME-$name":
+  bind::record { "CNAME-$name.$zone":
     zone         => $zone,
     target       => $target,
     host         => $host,

@@ -11,11 +11,11 @@ describe 'bind::srv', :type => :define do
         :target      => 'server',
         :record_port => '42',
     } }
-    it { should contain_bind__record('SRV-_http._tcp').with_zone('example42.com') }
-    it { should contain_bind__record('SRV-_http._tcp').with_target('server') }
-    it { should contain_bind__record('SRV-_http._tcp').with_record_type('SRV') }
-    it { should contain_bind__record('SRV-_http._tcp').with_order('20') }
-    it { should contain_bind__record('SRV-_http._tcp').with_record_priority('0 0 42') }
+    it { should contain_bind__record('SRV-_http._tcp.example42.com').with_zone('example42.com') }
+    it { should contain_bind__record('SRV-_http._tcp.example42.com').with_target('server') }
+    it { should contain_bind__record('SRV-_http._tcp.example42.com').with_record_type('SRV') }
+    it { should contain_bind__record('SRV-_http._tcp.example42.com').with_order('20') }
+    it { should contain_bind__record('SRV-_http._tcp.example42.com').with_record_priority('0 0 42') }
   end
 
   describe 'Test bind::srv with different record priority and weight' do
@@ -26,7 +26,7 @@ describe 'bind::srv', :type => :define do
         :record_priority => '43',
         :record_weight   => '44',
     } }
-    it { should contain_bind__record('SRV-_http._tcp').with_record_priority('43 44 42') }
+    it { should contain_bind__record('SRV-_http._tcp.example42.com').with_record_priority('43 44 42') }
   end
 
   describe 'Test bind::srv with different order' do
@@ -36,7 +36,7 @@ describe 'bind::srv', :type => :define do
         :record_port => '42',
         :order => '42',
     } }
-    it { should contain_bind__record('SRV-_http._tcp').with_order('42') }
+    it { should contain_bind__record('SRV-_http._tcp.example42.com').with_order('42') }
   end
 end
 

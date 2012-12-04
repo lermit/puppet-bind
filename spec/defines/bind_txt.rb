@@ -10,10 +10,10 @@ describe 'bind::txt', :type => :define do
         :zone   => 'example42.com',
         :target => 'My message',
     } }
-    it { should contain_bind__record('TXT-my_record').with_zone('example42.com') }
-    it { should contain_bind__record('TXT-my_record').with_target('My message') }
-    it { should contain_bind__record('TXT-my_record').with_record_type('TXT') }
-    it { should contain_bind__record('TXT-my_record').with_order('30') }
+    it { should contain_bind__record('TXT-my_record.example42.com').with_zone('example42.com') }
+    it { should contain_bind__record('TXT-my_record.example42.com').with_target('My message') }
+    it { should contain_bind__record('TXT-my_record.example42.com').with_record_type('TXT') }
+    it { should contain_bind__record('TXT-my_record.example42.com').with_order('30') }
   end
 
   describe 'Test bind::txt with different order' do
@@ -22,7 +22,7 @@ describe 'bind::txt', :type => :define do
         :target => 'My message',
         :order => '42',
     } }
-    it { should contain_bind__record('TXT-my_record').with_order('42') }
+    it { should contain_bind__record('TXT-my_record.example42.com').with_order('42') }
   end
 end
 
