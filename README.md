@@ -3,8 +3,11 @@
 This is a Puppet module for bind based on the second generation layout ("NextGen") of Example42 Puppet Modules.
 
 Updated by Javier Bertoli / Netmanagers
+
 Made by Romain THERRAT / Carpe-Hora
+
 Based on Example42 rules
+
 Made by Alessandro Franceschi / Lab42
 
 Official site: http://www.netmanagers.com.ar
