@@ -2,13 +2,14 @@
 
 This is a Puppet module for bind based on the second generation layout ("NextGen") of Example42 Puppet Modules.
 
+Updated by Javier Bertoli / Netmanagers
 Made by Romain THERRAT / Carpe-Hora
 Based on Example42 rules
 Made by Alessandro Franceschi / Lab42
 
-Official site: http://www.example42.com
+Official site: http://www.netmanagers.com.ar
 
-Official git repository: http://github.com/lermit/puppet-bind
+Official git repository: http://github.com/netmanagers/puppet-bind
 
 Released under the terms of Apache 2 License.
 
@@ -172,3 +173,7 @@ For detailed info about the logic and usage patterns of Example42 modules check 
           firewall_dst  => $ipaddress_eth0,
         }
 
+
+## CONTINUOUS TESTING
+
+Travis {<img src="https://travis-ci.org/netmanagers/puppet-bind.png?branch=master" alt="Build Status" />}[https://travis-ci.org/netmanagers/puppet-bind]

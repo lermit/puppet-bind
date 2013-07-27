@@ -7,4 +7,3 @@ fixtures:
     "concat": "git://github.com/example42/puppet-concat.git"
   symlinks:
     "bind": "#{source_dir}"
-
