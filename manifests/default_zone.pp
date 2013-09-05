@@ -266,6 +266,10 @@ class bind::default_zone{
     record_type => 'AAAA',
     target      => '::1',
   }
+  bind::ns {'localhost-localhost':
+    zone   => 'localhost',
+    target => 'localhost.'
+  }
 
   # localhost reverse
   bind::zone{ '127.in-addr.arpa':
@@ -281,6 +285,10 @@ class bind::default_zone{
     record_type => 'PTR',
     target      => 'localhost.',
   }
+  bind::ns {'127-localhost.':
+    zone   => '127.in-addr.arpa',
+    target => 'localhost.'
+  }
 
   # reverse 0
   bind::zone{ '0.in-addr.arpa':
@@ -291,6 +299,10 @@ class bind::default_zone{
     zone_ns        => 'localhost.',
     zone_contact   => 'root.localhost.',
   }
+  bind::ns {'0-localhost.':
+    zone => '0.in-addr.arpa',
+    target => 'localhost.'
+  }
 
   # reverse 255
   bind::zone{ '255.in-addr.arpa':
@@ -300,5 +312,9 @@ class bind::default_zone{
     zone_neg_cache => '604800',
     zone_ns        => 'localhost.',
     zone_contact   => 'root.localhost.',
+  }
+  bind::ns {'255-localhost.':
+    zone   => '255.in-addr.arpa',
+    target =>  'localhost.'
   }
 }
