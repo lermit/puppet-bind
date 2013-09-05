@@ -1,14 +1,18 @@
-= Puppet module: bind
+# Puppet module: bind
 
 This is a Puppet module for bind based on the second generation layout ("NextGen") of Example42 Puppet Modules.
 
+Updated by Javier Bertoli / Netmanagers
+
 Made by Romain THERRAT / Carpe-Hora
+
 Based on Example42 rules
+
 Made by Alessandro Franceschi / Lab42
 
-Official site: http://www.example42.com
+Official site: http://www.netmanagers.com.ar
 
-Official git repository: http://github.com/lermit/puppet-bind
+Official git repository: http://github.com/netmanagers/puppet-bind
 
 Released under the terms of Apache 2 License.
 
@@ -16,7 +20,7 @@ This module requires functions provided by the Example42 Puppi module (you need 
 
 For detailed info about the logic and usage patterns of Example42 modules check the DOCS directory on Example42 main modules set.
 
-== USAGE - Basic management
+## USAGE - Basic management
 
 * Install bind with default settings
 
@@ -46,7 +50,7 @@ For detailed info about the logic and usage patterns of Example42 modules check 
           audit_only => true
         }
 
-== USAGE - Create a zone
+## USAGE - Create a zone
 
 * Create a zone as master.
 
@@ -94,7 +98,7 @@ For detailed info about the logic and usage patterns of Example42 modules check 
         zone_ns => 'ns00',
         ...
 
-== USAGE - Record
+## USAGE - Record
 
 * Add an A record into zone (example.com). www.example.com -> 192.168.0.10. This will add entry like "www IN A 192.168.0.10".
 
@@ -114,7 +118,7 @@ For detailed info about the logic and usage patterns of Example42 modules check 
         bind::cname
         bind::ptr
 
-== USAGE - Overrides and Customizations
+## USAGE - Overrides and Customizations
 * Use custom sources for main config file
 
         class { 'bind':
@@ -142,7 +146,7 @@ For detailed info about the logic and usage patterns of Example42 modules check 
         }
 
 
-== USAGE - Example42 extensions management
+## USAGE - Example42 extensions management
 * Activate puppi (recommended, but disabled by default)
 
         class { 'bind':
@@ -172,3 +176,7 @@ For detailed info about the logic and usage patterns of Example42 modules check 
           firewall_dst  => $ipaddress_eth0,
         }
 
+
+## CONTINUOUS TESTING
+
+Travis {<img src="https://travis-ci.org/netmanagers/puppet-bind.png?branch=master" alt="Build Status" />}[https://travis-ci.org/netmanagers/puppet-bind]
